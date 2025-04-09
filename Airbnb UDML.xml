@@ -1,0 +1,41 @@
+<Component name="ListingCard">
+	<Column name="cardContainer" cornerRadius="lg" gap="med">
+	<!-- Image Carousel -->
+	<Column name="carouselContainer">
+ 		<Carousel height="200px" autoScroll="false" onHover=showArrows(leftArrow, RightArrow) dotIndicators="true">
+			<repeat>
+				<Image><Data src="https://shorturl.at/Oc2M6" /></Image>
+				<Image><Data src="https://shorturl.at/mYiMc" /></Image>
+				<Image><Data src="https://shorturl.at/Nws5p" /></Image>
+
+			</repeat>
+		</Carousel>
+
+		<Badge layer=2 variant="highlight" margin=”16px” position="top-left">Superhost</Badge>
+		<IconButton layer=2 icon="heart" variant="ghost" onClick="toggleFavorite" position="top-right" />
+		
+		<!-- Scroll arrows (shown on hover) -->
+		<IconButton name="leftArrow" layer=2 visibility="hidden" icon="chevron-left" onClick="previousSlide" position="center-left"/>
+		<IconButton name="rightArrow" layer=2 visibility="hidden" icon="chevron-right" onClick="nextSlide" position="center-right"/>
+		
+		<Interaction name="showArrows>
+			<Action type="setProperty" property="visibility" value="true">
+		</Interaction>
+	</Column>
+
+	<!-- Property Details -->
+	<Column name="listingDetails" padding="md" justify="space-between">
+		<Row name="topRow" gap="auto">
+			<Text variant="title-sm">Groveland, California</Text>
+			<Row name="starRating" gap="xs" align="center">
+				<Icon name="star" size="sm" />
+				<Text variant="body-sm">4.91</Text>
+			</Row>
+		</Row>
+		<Text variant="body-sm">Yosemite National Park</Text>
+		<Text variant="body-sm"><Data description="date range"</Data></Text>
+		<Text variant="body-bold">$289/night</Text>
+	 </Column>
+
+	 </Column>
+</Component>
